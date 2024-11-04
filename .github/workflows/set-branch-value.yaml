@@ -1,0 +1,27 @@
+name: set-branch-value
+
+on:
+  create:
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  edit-file:
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: set branch value
+      run: yq -i '.branch=$GITHUB_REF_NAME' ./charts/aks-store-demo/values.yaml
+    - name: check for changes, push if so
+      run: git config --local user.name actions-user
+          git config --local user.email "actions@github.com"
+          if ! git diff --exit-code; then
+              git add .
+              git commit -am "GH Action updating values.yaml"
+              git push -f origin $GITHUB_REF_NAME
+          fi

@@ -2,8 +2,6 @@ name: package-store-admin
 
 on:
   push:
-    branches:
-      - 'main'
     paths:
       - 'src/store-admin/**'
 
@@ -22,7 +20,7 @@ jobs:
       - name: Set environment variables
         id: set-variables
         run: |
-          echo "REPOSITORY=ghcr.io/$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
+          echo "REPOSITORY=ghcr.io/$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')/$(echo ${{ github.ref_name }} | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
           echo "IMAGE=store-admin" >> "$GITHUB_OUTPUT"
           echo "VERSION=$(echo ${GITHUB_SHA} | cut -c1-7)" >> "$GITHUB_OUTPUT"
           echo "CREATED=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> "$GITHUB_OUTPUT"

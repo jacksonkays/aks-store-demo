@@ -1,5 +1,5 @@
 locals {
-  name                            = "${random_pet.example.id}${random_integer.example.result}"
+  name                            = "${var.name}${random_integer.example.result}"
   location                        = var.location
   aks_node_pool_vm_size           = var.aks_node_pool_vm_size != "" ? var.aks_node_pool_vm_size : "Standard_DS2_v2"
   deploy_azure_cosmosdb           = var.deploy_azure_cosmosdb == "true" ? true : false

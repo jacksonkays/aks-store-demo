@@ -4,6 +4,26 @@ variable "resource_group_name_suffix" {
   default     = "demo"
 }
 
+variable "name" {
+  type        = string
+}
+
+variable "teamname" {
+  type        = string
+}
+
+variable "repourl" {
+  type        = string
+}
+
+variable "repopath" {
+  type        = string
+}
+
+variable "branch" {
+  type        = string
+}
+
 variable "location" {
   type = string
 }

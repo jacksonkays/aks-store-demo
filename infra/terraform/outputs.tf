@@ -11,7 +11,7 @@ output "AZURE_AKS_CLUSTER_NAME" {
 }
 
 output "AZURE_AKS_NAMESPACE" {
-  value = var.k8s_namespace
+  value = var.name
 }
 
 output "AZURE_AKS_CLUSTER_ID" {
@@ -103,13 +103,13 @@ output "AZURE_KEY_VAULT_NAME" {
   value = !local.deploy_azure_workload_identity ? azurerm_key_vault.example[0].name : ""
 }
 
-output "AZURE_REGISTRY_NAME" {
-  value = local.deploy_azure_container_registry ? azurerm_container_registry.example[0].name : ""
-}
+# output "AZURE_REGISTRY_NAME" {
+#   value = local.deploy_azure_container_registry ? azurerm_container_registry.example[0].name : ""
+# }
 
-output "AZURE_REGISTRY_URI" {
-  value = local.deploy_azure_container_registry ? azurerm_container_registry.example[0].login_server : "ghcr.io/azure-samples"
-}
+# output "AZURE_REGISTRY_URI" {
+#   value = local.deploy_azure_container_registry ? azurerm_container_registry.example[0].login_server : "ghcr.io/azure-samples"
+# }
 
 output "AZURE_TENANT_ID" {
   value = data.azurerm_client_config.current.tenant_id
