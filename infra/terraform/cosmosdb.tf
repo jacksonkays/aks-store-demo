@@ -28,7 +28,7 @@ resource "azurerm_cosmosdb_account" "example" {
   }
 
   geo_location {
-    location          = local.cosmosdb_failover_location
+    location          = var.cosmosdb_failover_location
     failover_priority = 1 # secondary location
   }
 }
