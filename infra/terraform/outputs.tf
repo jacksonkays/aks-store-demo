@@ -114,3 +114,11 @@ output "AZURE_KEY_VAULT_NAME" {
 output "AZURE_TENANT_ID" {
   value = data.azurerm_client_config.current.tenant_id
 }
+
+output "keyvault_id" {
+  value = azurerm_key_vault.example[0].id
+}
+
+output "msi_client_id" {
+  value = azurerm_user_assigned_identity.example.client_id
+}
