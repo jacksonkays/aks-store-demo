@@ -20,8 +20,8 @@ resource "azurerm_cognitive_deployment" "gpt" {
     version = var.openai_model_version
   }
 
-  sku {
-    name = "Standard"
+  scale {
+    type = "Standard"
     capacity = var.openai_model_capacity
   }
 
@@ -38,8 +38,8 @@ resource "azurerm_cognitive_deployment" "dalle" {
     version = var.openai_dalle_model_version
   }
 
-  sku {
-    name     = "Standard"
+  scale {
+    type     = "Standard"
     capacity = var.openai_dalle_model_capacity
   }
 }
