@@ -23,12 +23,12 @@ resource "azurerm_cosmosdb_account" "example" {
   }
 
   geo_location {
-    location          = local.location
+    location          = "eastus"
     failover_priority = 0 # primary location
   }
 
   geo_location {
-    location          = var.cosmosdb_failover_location
+    location          = "westus"
     failover_priority = 1 # secondary location
   }
 }
