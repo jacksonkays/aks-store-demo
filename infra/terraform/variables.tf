@@ -4,30 +4,6 @@ variable "resource_group_name_suffix" {
   default     = "demo"
 }
 
-variable "name" {
-  type        = string
-}
-
-variable "teamname" {
-  type        = string
-}
-
-variable "repourl" {
-  type        = string
-}
-
-variable "repopath" {
-  type        = string
-}
-
-variable "branch" {
-  type        = string
-}
-
-variable "location" {
-  type = string
-}
-
 variable "aks_node_pool_vm_size" {
   description = "value of azure kubernetes service vmss sku"
   type        = string
@@ -147,4 +123,40 @@ variable "deploy_observability_tools" {
   description = "value of setting to deploy observability stack which includes prometheus, grafana, and container insights. this string value will be used to set the local boolean variable"
   type        = string
   default     = "false"
+}
+
+##special section - set with ADE typically
+variable "name" {
+  type        = string
+  default     = "aksstoredemo"
+}
+
+variable "teamname" {
+  type        = string
+  default     = "team01"
+}
+
+variable "repourl" {
+  type        = string
+  default     = "https://github.com/jacksonkays/aks-store-demo"
+}
+
+variable "repopath" {
+  type        = string
+  default     = "charts/aks-store-demo/templates"
+}
+
+variable "branch" {
+  type        = string
+  default     = "main"
+}
+
+variable "location" {
+  type        = string
+  default     = "eastus"
+}
+
+variable "resource_group_name" {
+  type        = string
+  default     = "proj-jackkays-euap-aks-store-infra"
 }
