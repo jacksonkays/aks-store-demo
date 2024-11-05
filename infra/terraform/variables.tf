@@ -78,7 +78,7 @@ variable "cosmosdb_account_kind" {
 variable "cosmosdb_failover_location" {
   description = "value of azure cosmosdb failover location. check this doc for region pair listings: https://learn.microsoft.com/azure/reliability/cross-region-replication-azure"
   type        = string
-  default     = ""
+  default     = "westus"
 }
 
 
