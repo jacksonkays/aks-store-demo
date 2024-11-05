@@ -3,11 +3,11 @@ output "AZURE_RESOURCENAME_SUFFIX" {
 }
 
 output "AZURE_RESOURCE_GROUP" {
-  value = azurerm_resource_group.example.name
+  value = data.azurerm_resource_group.example.name
 }
 
 output "AZURE_AKS_CLUSTER_NAME" {
-  value = azurerm_kubernetes_cluster.example.name
+  value = data.azurerm_kubernetes_cluster.example.name
 }
 
 output "AZURE_AKS_NAMESPACE" {
@@ -15,15 +15,15 @@ output "AZURE_AKS_NAMESPACE" {
 }
 
 output "AZURE_AKS_CLUSTER_ID" {
-  value = azurerm_kubernetes_cluster.example.id
+  value = data.azurerm_kubernetes_cluster.example.id
 }
 
 output "AZURE_AKS_CLUSTER_NODE_RESOURCEGROUP_NAME" {
-  value = azurerm_kubernetes_cluster.example.node_resource_group
+  value = data.azurerm_kubernetes_cluster.example.node_resource_group
 }
 
 output "AZURE_AKS_OIDC_ISSUER_URL" {
-  value = azurerm_kubernetes_cluster.example.oidc_issuer_url
+  value = data.azurerm_kubernetes_cluster.example.oidc_issuer_url
 }
 
 output "AZURE_OPENAI_MODEL_NAME" {
