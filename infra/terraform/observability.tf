@@ -1,7 +1,7 @@
 resource "azurerm_log_analytics_workspace" "example" {
   name                = "alog-${local.name}"
   resource_group_name = data.azurerm_resource_group.example.name
-  location            = local.location
+  location            = data.azurerm_kubernetes_cluster.example.location
   sku                 = "PerGB2018"
   retention_in_days   = 30
 }
@@ -10,14 +10,14 @@ resource "azurerm_monitor_workspace" "example" {
   count               = local.deploy_observability_tools ? 1 : 0
   name                = "amon-${local.name}"
   resource_group_name = data.azurerm_resource_group.example.name
-  location            = local.location
+  location            = data.azurerm_kubernetes_cluster.example.location
 }
 
 resource "azurerm_dashboard_grafana" "example" {
   count                 = local.deploy_observability_tools ? 1 : 0
   name                  = "amg-${local.name}"
   resource_group_name   = data.azurerm_resource_group.example.name
-  location              = local.location
+  location              = data.azurerm_kubernetes_cluster.example.location
   grafana_major_version = "10"
 
   identity {
