@@ -120,5 +120,5 @@ output "keyvault_id" {
 }
 
 output "msi_client_id" {
-  value = azurerm_user_assigned_identity.example.client_id
+  value = azurerm_user_assigned_identity.example[0].client_id
 }
