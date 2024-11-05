@@ -57,8 +57,6 @@ data "http" "ifconfig" {
 data "azurerm_subscription" "current" {}
 data "azurerm_client_config" "current" {}
 
-variable "resource_group_name" {}
-
 data "azurerm_resource_group" "example" {
   name     = var.resource_group_name
 }
