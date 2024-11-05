@@ -19,7 +19,7 @@ variable "kv_rbac_enabled" {
 variable "ai_location" {
   description = "value of azure region for deploying azure ai service. check this doc for availability: https://learn.microsoft.com/azure/ai-services/openai/concepts/models#provisioned-deployment-model-availability"
   type        = string
-  default     = ""
+  default     = "australiaeast"
 }
 
 variable "openai_model_name" {
