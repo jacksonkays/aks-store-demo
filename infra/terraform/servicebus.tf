@@ -1,8 +1,8 @@
 resource "azurerm_servicebus_namespace" "example" {
   count               = local.deploy_azure_servicebus ? 1 : 0
   name                = "sb-${local.name}"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
+  location            = local.location
+  resource_group_name = data.azurerm_resource_group.example.name
   sku                 = "Standard"
   local_auth_enabled  = !local.deploy_azure_workload_identity
 }

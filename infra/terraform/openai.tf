@@ -2,7 +2,7 @@ resource "azurerm_cognitive_account" "example" {
   count                 = local.deploy_azure_openai ? 1 : 0
   name                  = "aoai-${local.name}"
   location              = var.ai_location
-  resource_group_name   = azurerm_resource_group.example.name
+  resource_group_name   = data.azurerm_resource_group.example.name
   kind                  = "OpenAI"
   sku_name              = "S0"
   custom_subdomain_name = "aoai-${local.name}"

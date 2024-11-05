@@ -1,8 +1,8 @@
 resource "azurerm_key_vault" "example" {
   count                       = !local.deploy_azure_workload_identity ? 1 : 0
   name                        = "akv-${local.name}"
-  location                    = azurerm_resource_group.example.location
-  resource_group_name         = azurerm_resource_group.example.name
+  location                    = local.location
+  resource_group_name         = data.azurerm_resource_group.example.name
   enabled_for_disk_encryption = true
   tenant_id                   = data.azurerm_client_config.current.tenant_id
   sku_name                    = "standard"

@@ -1,8 +1,8 @@
 resource "azurerm_cosmosdb_account" "example" {
   count                              = local.deploy_azure_cosmosdb ? 1 : 0
   name                               = "db-${local.name}"
-  location                           = azurerm_resource_group.example.location
-  resource_group_name                = azurerm_resource_group.example.name
+  location                           = local.location
+  resource_group_name                = data.azurerm_resource_group.example.name
   offer_type                         = "Standard"
   kind                               = local.cosmosdb_account_kind
   access_key_metadata_writes_enabled = !local.deploy_azure_workload_identity
@@ -23,7 +23,7 @@ resource "azurerm_cosmosdb_account" "example" {
   }
 
   geo_location {
-    location          = azurerm_resource_group.example.location
+    location          = local.location
     failover_priority = 0 # primary location
   }
 

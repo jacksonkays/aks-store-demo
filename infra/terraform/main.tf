@@ -63,7 +63,7 @@ data "azurerm_resource_group" "example" {
   name     = var.resource_group_name
 }
 
-data "azurerm_kubernetes_clsuter" "example" {
+data "azurerm_kubernetes_cluster" "example" {
   name                = "shared-cluster-01"
   resource_group_name = "jackkays-test"
 }
