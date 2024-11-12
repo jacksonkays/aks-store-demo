@@ -67,7 +67,7 @@ variable "k8s_namespace" {
 variable "cosmosdb_account_kind" {
   description = "value of azure cosmosdb account kind. this string value defaults to MongoDB and will be used to set the local variable"
   type        = string
-  default     = "MongoDB"
+  default     = "GlobalDocumentDB"
 
   # validation {
   #   condition     = contains(["MongoDB", "GlobalDocumentDB"], local.cosmosdb_account_kind)

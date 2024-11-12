@@ -31,7 +31,7 @@ output "AZURE_OPENAI_MODEL_NAME" {
 }
 
 output "AZURE_OPENAI_ENDPOINT" {
-  value = local.deploy_azure_openai ? azurerm_cognitive_account.example[0].endpoint : ""
+  value = local.deploy_azure_openai ? data.azurerm_cognitive_account.shared_account.endpoint : ""
 }
 
 output "AZURE_OPENAI_DALL_E_MODEL_NAME" {
@@ -39,7 +39,7 @@ output "AZURE_OPENAI_DALL_E_MODEL_NAME" {
 }
 
 output "AZURE_OPENAI_DALL_E_ENDPOINT" {
-  value = local.deploy_azure_openai_dalle_model ? azurerm_cognitive_account.example[0].endpoint : ""
+  value = local.deploy_azure_openai_dalle_model ? data.azurerm_cognitive_account.shared_account.endpoint : ""
 }
 
 output "AZURE_OPENAI_KEY" {

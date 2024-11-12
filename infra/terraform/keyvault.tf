@@ -107,7 +107,7 @@ resource "azurerm_role_assignment" "example_akv_rbac" {
 resource "azurerm_key_vault_secret" "openai_key" {
   count        = local.deploy_azure_openai && !local.deploy_azure_workload_identity ? 1 : 0
   name         = "AZURE-OPENAI-KEY"
-  value        = azurerm_cognitive_account.example[0].primary_access_key
+  value        = data.azurerm_cognitive_account.shared_account.primary_key
   key_vault_id = azurerm_key_vault.example[0].id
   depends_on   = [azurerm_role_assignment.example_akv_rbac]
 }
