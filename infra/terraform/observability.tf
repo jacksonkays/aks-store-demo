@@ -90,6 +90,10 @@ resource "azurerm_monitor_data_collection_rule_association" "example_dce_to_aks"
   count                       = local.deploy_observability_tools ? 1 : 0
   target_resource_id          = data.azurerm_kubernetes_cluster.example.id
   data_collection_endpoint_id = azurerm_monitor_data_collection_endpoint.example_msprom[0].id
+
+  lifecycle {
+    replace_triggered_by = [ azurerm_monitor_data_collection_endpoint.example_nmsprom[0] ]
+  }
 }
 
 resource "azurerm_monitor_alert_prometheus_rule_group" "example_node" {
