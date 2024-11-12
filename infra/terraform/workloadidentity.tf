@@ -12,7 +12,7 @@ resource "azurerm_federated_identity_credential" "example" {
   parent_id           = azurerm_user_assigned_identity.example[0].id
   audience            = ["api://AzureADTokenExchange"]
   issuer              = data.azurerm_kubernetes_cluster.example.oidc_issuer_url
-  subject             = "system:serviceaccount:${var.k8s_namespace}:${azurerm_user_assigned_identity.example[0].name}"
+  subject             = "system:serviceaccount:${var.name}:${azurerm_user_assigned_identity.example[0].name}"
 }
 
 resource "azurerm_role_assignment" "aoai_mid" {
