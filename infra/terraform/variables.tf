@@ -91,72 +91,65 @@ variable "deploy_azure_container_registry" {
 variable "deploy_azure_workload_identity" {
   description = "value of setting to deploy azure workload identity for service authentication. this string value will be used to set the local boolean variable"
   type        = string
-  default     = "false"
+  default     = "true"
 }
 
 variable "deploy_azure_openai" {
   description = "value of setting to deploy azure openai. this string value will be used to set the local boolean variable"
   type        = string
-  default     = "false"
+  default     = "true"
 }
 
 variable "deploy_azure_openai_dalle_model" {
   description = "value of setting to deploy azure openai dall-e-3 model. this string value will be used to set the local boolean variable"
   type        = string
-  default     = "false"
+  default     = "true"
 }
 
 
 variable "deploy_azure_servicebus" {
   description = "value of setting to deploy azure service bus. this string value will be used to set the local boolean variable"
   type        = string
-  default     = "false"
+  default     = "true"
 }
 
 variable "deploy_azure_cosmosdb" {
   description = "value of setting to deploy azure cosmosdb. this string value will be used to set the local boolean variable"
   type        = string
-  default     = "false"
+  default     = "true"
 }
 
 variable "deploy_observability_tools" {
   description = "value of setting to deploy observability stack which includes prometheus, grafana, and container insights. this string value will be used to set the local boolean variable"
   type        = string
-  default     = "false"
+  default     = "true"
 }
 
 ##special section - set with ADE typically
 variable "name" {
   type        = string
-  default     = "aksstoredemo"
 }
 
 variable "teamname" {
   type        = string
-  default     = "team01"
 }
 
 variable "repourl" {
   type        = string
-  default     = "https://github.com/jacksonkays/aks-store-demo"
 }
 
 variable "repopath" {
   type        = string
-  default     = "charts/aks-store-demo/templates"
 }
 
 variable "branch" {
   type        = string
-  default     = "main"
 }
 
 variable "location" {
   type        = string
-  default     = "eastus"
 }
 
 variable "resource_group_name" {
   type        = string
-  default     = "proj-jackkays-euap-aks-store-infra"
 }
