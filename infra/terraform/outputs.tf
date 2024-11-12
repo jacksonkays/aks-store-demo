@@ -103,22 +103,6 @@ output "AZURE_KEY_VAULT_NAME" {
   value = !local.deploy_azure_workload_identity ? azurerm_key_vault.example[0].name : ""
 }
 
-# output "AZURE_REGISTRY_NAME" {
-#   value = local.deploy_azure_container_registry ? azurerm_container_registry.example[0].name : ""
-# }
-
-# output "AZURE_REGISTRY_URI" {
-#   value = local.deploy_azure_container_registry ? azurerm_container_registry.example[0].login_server : "ghcr.io/azure-samples"
-# }
-
 output "AZURE_TENANT_ID" {
   value = data.azurerm_client_config.current.tenant_id
-}
-
-output "keyvault_id" {
-  value = !local.deploy_azure_workload_identity ? azurerm_key_vault.example[0].id : "/subscriptions/3de261df-f2d8-4c00-a0ee-a0be30f1e48e/resourceGroups/proj-jackkays-euap-aks-store-infra/providers/Microsoft.KeyVault/vaults/akv-aksstoredemo41" # test value for runner
-}
-
-output "msi_client_id" {
-  value = azurerm_user_assigned_identity.example[0].client_id
 }
