@@ -19,7 +19,7 @@ resource "azurerm_role_assignment" "aoai_mid" {
   count                = local.deploy_azure_openai && local.deploy_azure_workload_identity ? 1 : 0
   principal_id         = azurerm_user_assigned_identity.example[0].principal_id
   role_definition_name = "Cognitive Services OpenAI User"
-  scope                = azurerm_cognitive_account.example[0].id
+  scope                = data.azurerm_cognitive_account.shared_account.id
 }
 
 resource "azurerm_role_assignment" "servicebus_mid" {
