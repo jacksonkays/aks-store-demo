@@ -53,5 +53,5 @@ resource "azurerm_role_assignment" "example_aoai_me" {
   count                = local.deploy_azure_openai ? 1 : 0
   principal_id         = data.azurerm_client_config.current.object_id
   role_definition_name = "Cognitive Services OpenAI User"
-  scope                = data.azurerm_cognitive_account.shared_account[0].id
+  scope                = data.azurerm_cognitive_account.shared_account.id
 }
