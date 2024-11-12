@@ -92,7 +92,7 @@ resource "azurerm_monitor_data_collection_rule_association" "example_dce_to_aks"
   data_collection_endpoint_id = azurerm_monitor_data_collection_endpoint.example_msprom[0].id
 
   lifecycle {
-    replace_triggered_by = [ azurerm_monitor_data_collection_endpoint.example_nmsprom[0] ]
+    replace_triggered_by = [ azurerm_monitor_data_collection_rule.example_nmsprom ]
   }
 }
 
