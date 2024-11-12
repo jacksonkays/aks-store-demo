@@ -88,7 +88,6 @@ resource "azurerm_monitor_data_collection_rule_association" "example_dcr_to_aks"
 
 resource "azurerm_monitor_data_collection_rule_association" "example_dce_to_aks" {
   count                       = local.deploy_observability_tools ? 1 : 0
-  name                        = "dce-${data.azurerm_kubernetes_cluster.example.name}-${random_integer.example.result}"
   target_resource_id          = data.azurerm_kubernetes_cluster.example.id
   data_collection_endpoint_id = azurerm_monitor_data_collection_endpoint.example_msprom[0].id
 }
