@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: store-admin
+  labels:
+    app: store-admin
+    version: 1.0.0
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:

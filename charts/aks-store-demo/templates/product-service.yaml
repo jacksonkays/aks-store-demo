@@ -4,6 +4,7 @@ metadata:
   name: product-service
   labels:
     app: product-service
+    version: 1.0.0
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:

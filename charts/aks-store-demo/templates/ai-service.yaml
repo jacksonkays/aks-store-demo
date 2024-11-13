@@ -3,6 +3,9 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: ai-service-configs
+  labels:
+    app: ai-service
+    version: 1.0.0
 data:
   AZURE_OPENAI_ENDPOINT: "{{ .Values.aiService.openAiEndpoint }}"
   AZURE_OPENAI_DEPLOYMENT_NAME: "{{ .Values.aiService.modelDeploymentName }}"
