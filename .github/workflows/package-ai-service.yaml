@@ -60,8 +60,14 @@ jobs:
             org.opencontainers.image.source=${{ github.repositoryUrl }}
             org.opencontainers.image.created=${{ steps.set-variables.outputs.CREATED }}
             org.opencontainers.image.revision=${{ steps.set-variables.outputs.VERSION }}
+
   version-chart:
+
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -82,8 +88,8 @@ jobs:
         run: |
           sed -i 's/version:.*/version: ${{ steps.set-variables.outputs.VERSION }}/' charts/aks-store-demo/templates/ai-service.yaml
           # Note: the following account information will not work on GHES
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "actions-user"
+          git config user.email "actions@github.com
           git add .
           git commit -m "version bump"
           git push
