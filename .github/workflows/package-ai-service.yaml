@@ -69,8 +69,14 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: Set environment variables
+        id: set-variables
         run: |
           echo "VERSION=$(echo ${GITHUB_SHA} | cut -c1-7)" >> "$GITHUB_OUTPUT"
+
+      - name: Env variable output
+        id: test-variables
+        run: |
+          echo ${{ steps.set-variables.outputs.VERSION }}
 
       - name: Commit version bump
         run: |
