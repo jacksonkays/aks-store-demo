@@ -7,7 +7,7 @@
       <p>{{ product.description }}</p>
       <div class="product-details">
         <div class="product-price">
-          <p class="price"><s>{{ product.price }}</s>{{ (product.price / 2).toPrecision(2) }}</p>
+          <p class="price"><s>{{ product.price }}</s>   {{ (product.price / 2).toFixed(2) }}</p>
         </div>
         <div class="product-controls">
           <input type="number" v-model="quantity" min="1" class="quantity-input" />
