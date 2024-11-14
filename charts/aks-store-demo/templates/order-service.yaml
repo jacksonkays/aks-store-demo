@@ -4,7 +4,7 @@ metadata:
   name: order-service-configs
   labels:
     app: order-service
-    version: 1.0.0
+    version: ea6543c
 data:  
   {{- if eq .Values.useAzureAd true }}
   USE_WORKLOAD_IDENTITY_AUTH: "true"
