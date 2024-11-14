@@ -6,25 +6,44 @@ templatePath: main.tf
 parameters:
   - id: "name"
     name: "Name"
+    description: "Name of the environment, used for the created namespace within the shared cluster"
     required: true
     type: "string"
   - id: "location"
     name: "Location"
-    required: true
+    description: "Azure region for infrastructure resources"
+    default: "eastus"
     type: "string"
   - id: "teamname"
     name: "Team Name"
     required: true
+    allowed:
+      - "eCommStoreTeam"
+      - "eCommAdsTeam"
     type: "string"
   - id: "repourl"
     name: "Repo URL"
+    description: "URL to the source code repository"
     required: true
     type: "string"
+    allowed:
+      - "https://github.com/jacksonkays/aks-store-demo"
   - id: "repopath"
     name: "Repo Path"
+    description: "Path to the Kubernetes configuration files"
     required: true
     type: "string"
+    allowed:
+      - "charts/aks-store-demo"
   - id: "branch"
     name: "Branch"
+    description: "Feature branch to deploy"
     required: true
     type: "string"
+  - id: "contains_pii"
+    name: "Contains PII"
+    description: "Does the application contain Personally Identifiable Info (PII)?"
+    type: "boolean"
+    allowed:
+      - true
+      - false
