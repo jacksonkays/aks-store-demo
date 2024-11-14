@@ -7,7 +7,7 @@
       <p>{{ product.description }}</p>
       <div class="product-details">
         <div class="product-price">
-          <p class="price">{{ product.price }}</p>
+          <p class="price"><s>{{ product.price }}</s>{{ product.price / 2}}</p>
         </div>
         <div class="product-controls">
           <input type="number" v-model="quantity" min="1" class="quantity-input" />

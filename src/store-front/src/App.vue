@@ -1,5 +1,6 @@
 <template>
   <TopNav :cartItemCount="cartItemCount"/>
+  <h2 style="color: red">Thanksgiving Sale, 50% off on all products!</h2>
   <router-view
     :products="products"
     :cartItems="cartItems"
