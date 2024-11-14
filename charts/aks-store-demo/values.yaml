@@ -3,18 +3,13 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
-
 namespace: "dev"
-
 useRabbitMQ: true # when true, local rabbitmq container will be used
-useMongoDB:  true # when true, local mongodb container will be used
-
+useMongoDB: true # when true, local mongodb container will be used
 useAzureAd: false # when true, Azure AD auth will be used for ai-service, order-service, and makeline-service
 managedIdentityName: "" # name of the Azure AD identity to use for the service account
 managedIdentityClientId: "" # client ID of the managed identity to use for the service account
-
 branch: "main"
-
 aiService:
   # Specifies whether a ai-service deployment and service should be created
   create: false
@@ -29,7 +24,6 @@ aiService:
   image:
     repository: "ghcr.io/azure-samples/aks-store-demo/{{ tpl .Values.branch . }}/ai-service"
     tag: "latest"
-
 orderService:
   queueHost: "rabbitmq"
   queuePort: "5672"
@@ -40,7 +34,6 @@ orderService:
   image:
     repository: "ghcr.io/azure-samples/aks-store-demo/{{ tpl .Values.branch . }}/order-service"
     tag: "latest"
-
 makelineService:
   orderQueueUri: "amqp://rabbitmq:5672"
   orderQueueUsername: "username"
@@ -57,49 +50,40 @@ makelineService:
   image:
     repository: "ghcr.io/azure-samples/aks-store-demo/{{ tpl .Values.branch . }}/makeline-service"
     tag: "latest"
-
 productService:
   image:
     repository: "ghcr.io/azure-samples/aks-store-demo/{{ tpl .Values.branch . }}/product-service"
     tag: "latest"
-
 storeAdmin:
   image:
     repository: "ghcr.io/azure-samples/aks-store-demo/{{ tpl .Values.branch . }}/store-admin"
     tag: "latest"
   serviceType: LoadBalancer
-
 storeFront:
   image:
     repository: "ghcr.io/azure-samples/aks-store-demo/{{ tpl .Values.branch . }}/store-front"
-    tag: "3d9b0a1"
+    tag: "5ed538d"
   serviceType: LoadBalancer
-
 virtualCustomer:
   image:
     repository: "ghcr.io/azure-samples/aks-store-demo/{{ tpl .Values.branch . }}/virtual-customer"
     tag: "latest"
-
 virtualWorker:
   image:
     repository: "ghcr.io/azure-samples/aks-store-demo/{{ tpl .Values.branch . }}/virtual-worker"
     tag: "latest"
-
 podAnnotations: {}
-
 podSecurityContext: {}
-  # fsGroup: 2000
+# fsGroup: 2000
 
 securityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
+# capabilities:
+#   drop:
+#   - ALL
+# readOnlyRootFilesystem: true
+# runAsNonRoot: true
+# runAsUser: 1000
 
 nodeSelector: {}
-
 tolerations: []
-
 affinity: {}
