@@ -67,7 +67,7 @@ jobs:
     permissions:
       contents: write
 
-    needs: publish-container-image
+    # needs: publish-container-image
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
