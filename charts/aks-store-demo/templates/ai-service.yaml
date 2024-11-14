@@ -5,7 +5,7 @@ metadata:
   name: ai-service-configs
   labels:
     app: ai-service
-    version: 61d30a1
+    version: 470a2e8
 data:
   AZURE_OPENAI_ENDPOINT: "{{ .Values.aiService.openAiEndpoint }}"
   AZURE_OPENAI_DEPLOYMENT_NAME: "{{ .Values.aiService.modelDeploymentName }}"
