@@ -17,17 +17,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: preset values
-        run: |
-          sudo snap install yq
-          yq -i '.storeFront.image.tag = "f1e66df"' charts/aks-store-demo/values.yaml
-          # Note: the following account information will not work on GHES
-          git config user.name "actions-user"
-          git config user.email "actions@github.com"
-          git add .
-          git commit -m "version bump"
-          git push
-
       - name: Set environment variables
         id: set-variables
         run: |
@@ -46,6 +35,17 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: preset values
+        run: |
+          sudo snap install yq
+          yq -i '.storeFront.image.tag = "f1e66df"' charts/aks-store-demo/values.yaml
+          # Note: the following account information will not work on GHES
+          git config user.name "actions-user"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "version bump"
+          git push
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
