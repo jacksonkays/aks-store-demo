@@ -4,7 +4,7 @@ metadata:
   name: store-front
   labels:
     app: store-front
-    version: 1.0.0
+    version: 3d9b0a1
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
