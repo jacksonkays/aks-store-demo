@@ -12,7 +12,7 @@ parameters:
   - id: "location"
     name: "Location"
     description: "Azure region for infrastructure resources"
-    default: "eastus"
+    required: true
     type: "string"
   - id: "teamname"
     name: "Team Name"
