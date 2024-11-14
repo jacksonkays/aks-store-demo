@@ -86,7 +86,8 @@ jobs:
 
       - name: Commit version bump
         run: |
-          sed -i 's/version:.*/version: ${{ steps.set-variables.outputs.VERSION }}/' charts/aks-store-demo/templates/store-front.yaml
+          sudo snap install yq
+          yq -i '.storeFront.image.tag = "${{ steps.set-variables.outputs.VERSION }}"' charts/aks-store-demo/values.yaml
           # Note: the following account information will not work on GHES
           git config user.name "actions-user"
           git config user.email "actions@github.com"
