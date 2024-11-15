@@ -4,10 +4,11 @@ on:
   push:
     paths:
       - 'src/store-front/**'
+  workflow_call:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   packages: write
     
 jobs:
