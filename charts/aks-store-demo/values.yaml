@@ -62,7 +62,7 @@ storeAdmin:
 storeFront:
   image:
     repository: "ghcr.io/azure-samples/aks-store-demo/{{ tpl .Values.branch . }}/store-front"
-    tag: "f1e66df"
+    tag: "0d92c5c"
   serviceType: LoadBalancer
 virtualCustomer:
   image:
