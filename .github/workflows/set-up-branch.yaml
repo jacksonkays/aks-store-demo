@@ -1,0 +1,12 @@
+name: package-virtual-worker
+
+on:
+  create
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+    call-package-store-front:
+        uses: ./.github/workflows/package-store-front.yaml@main
