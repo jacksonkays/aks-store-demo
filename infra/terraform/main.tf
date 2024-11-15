@@ -40,6 +40,12 @@ provider "azurerm" {
 provider "azurerm"{
   alias = "secondary"
   subscription_id = "3de261df-f2d8-4c00-a0ee-a0be30f1e48e"
+
+    features {
+    resource_group {
+      prevent_deletion_if_contains_resources = false
+    }
+  }
 }
 
 resource "random_integer" "example" {
