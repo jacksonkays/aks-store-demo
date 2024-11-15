@@ -4,7 +4,6 @@ on:
   push:
     paths:
       - 'src/store-front/**'
-  workflow_call:
   workflow_dispatch:
 
 permissions:
