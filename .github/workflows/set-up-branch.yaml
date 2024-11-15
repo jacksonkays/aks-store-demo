@@ -9,4 +9,4 @@ permissions:
 
 jobs:
     call-package-store-front:
-        uses: ./.github/workflows/package-store-front.yaml@main
+        uses: ./.github/workflows/package-store-front.yaml
