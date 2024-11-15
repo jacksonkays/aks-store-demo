@@ -1,4 +1,4 @@
-name: package-virtual-worker
+name: Set Up Branch
 
 on:
   create
@@ -10,3 +10,15 @@ permissions:
 jobs:
     call-package-store-front:
         uses: ./.github/workflows/package-store-front.yaml
+    call-package-store-admin:
+        uses: ./.github/workflows/package-store-admin.yaml
+    call-package-virtual-customer:
+        uses: ./.github/workflows/package-virtual-customer.yaml
+    call-package-virtual-worker:
+        uses: ./.github/workflows/package-virtual-worker.yaml
+    call-package-product-service:
+        uses: ./.github/workflows/package-product-service.yaml
+    call-package-makeline-service:
+        uses: ./.github/workflows/package-makeline-service.yaml
+    call-package-order-service:
+        uses: ./.github/workflows/package-order-service.yaml
