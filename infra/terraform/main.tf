@@ -37,6 +37,11 @@ provider "azurerm" {
   }
 }
 
+provider "azurerm"{
+  alias = "secondary"
+  subscription_id = "3de261df-f2d8-4c00-a0ee-a0be30f1e48e"
+}
+
 resource "random_integer" "example" {
   min = 10
   max = 99
@@ -62,6 +67,7 @@ data "azurerm_resource_group" "example" {
 }
 
 data "azurerm_kubernetes_cluster" "example" {
+  provider            = azurerm.secondary
   name                = "shared-cluster-01"
   resource_group_name = "jackkays-test"
 }

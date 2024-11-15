@@ -45,6 +45,7 @@
 # }
 
 data "azurerm_cognitive_account" "shared_account" {
+  provider = azurerm.secondary
   name = "tianyiyuan-gpt"
   resource_group_name = "tianyiyuan-openai"
 }
