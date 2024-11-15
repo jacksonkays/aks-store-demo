@@ -85,6 +85,9 @@ jobs:
         id: test-variables
         run: |
           echo ${{ steps.set-variables.outputs.VERSION }}
+      
+      - name: Checkout code
+        uses: actions/checkout@v2
           
       - name: Commit version bump
         run: |
