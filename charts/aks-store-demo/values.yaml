@@ -33,7 +33,7 @@ orderService:
   queueTransport: ""
   image:
     repository: "ghcr.io/azure-samples/aks-store-demo/{{ tpl .Values.branch . }}/order-service"
-    tag: "latest"
+    tag: "a47ede0"
 makelineService:
   orderQueueUri: "amqp://rabbitmq:5672"
   orderQueueUsername: "username"
