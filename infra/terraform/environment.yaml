@@ -1,7 +1,7 @@
 name: AksTerraformDemo
 summary: AKS/ADE/Terraform demo environment - showing multitenancy capabilities
 description: Deploys an environment using Terraform
-runner: fidalgo.azurecr.io/test-image:latest
+runner: fidalgo.azurecr.io/deployment-environments/aks-terraform:latest
 templatePath: main.tf
 parameters:
   - id: "name"
