@@ -1,6 +1,6 @@
-name: AksTerraformDemo
+name: eCommStore
 summary: AKS/ADE/Terraform demo environment - showing multitenancy capabilities
-description: Deploys an environment using Terraform
+description: Deploys the eCommStore application to an Azure Kubernetes Service (AKS) cluster using Terraform
 runner: fidalgo.azurecr.io/deployment-environments/aks-terraform:latest
 templatePath: main.tf
 parameters:
