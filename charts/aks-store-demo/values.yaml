@@ -9,7 +9,7 @@ useMongoDB: true # when true, local mongodb container will be used
 useAzureAd: false # when true, Azure AD auth will be used for ai-service, order-service, and makeline-service
 managedIdentityName: "" # name of the Azure AD identity to use for the service account
 managedIdentityClientId: "" # client ID of the managed identity to use for the service account
-branch: "main"
+branch: "thanksgiving-feature"
 aiService:
   # Specifies whether a ai-service deployment and service should be created
   create: false
@@ -23,7 +23,7 @@ aiService:
   azureOpenAiApiVersion: "2024-02-15-preview"
   image:
     repository: "ghcr.io/azure-samples/aks-store-demo/{{ tpl .Values.branch . }}/ai-service"
-    tag: "latest"
+    tag: "a47ede0"
 orderService:
   queueHost: "rabbitmq"
   queuePort: "5672"
@@ -49,15 +49,15 @@ makelineService:
   orderDBPassword: ""
   image:
     repository: "ghcr.io/azure-samples/aks-store-demo/{{ tpl .Values.branch . }}/makeline-service"
-    tag: "latest"
+    tag: "a47ede0"
 productService:
   image:
     repository: "ghcr.io/azure-samples/aks-store-demo/{{ tpl .Values.branch . }}/product-service"
-    tag: "latest"
+    tag: "a47ede0"
 storeAdmin:
   image:
     repository: "ghcr.io/azure-samples/aks-store-demo/{{ tpl .Values.branch . }}/store-admin"
-    tag: "latest"
+    tag: "a47ede0"
   serviceType: LoadBalancer
 storeFront:
   image:
@@ -67,11 +67,11 @@ storeFront:
 virtualCustomer:
   image:
     repository: "ghcr.io/azure-samples/aks-store-demo/{{ tpl .Values.branch . }}/virtual-customer"
-    tag: "latest"
+    tag: "a47ede0"
 virtualWorker:
   image:
     repository: "ghcr.io/azure-samples/aks-store-demo/{{ tpl .Values.branch . }}/virtual-worker"
-    tag: "latest"
+    tag: "a47ede0"
 podAnnotations: {}
 podSecurityContext: {}
 # fsGroup: 2000
