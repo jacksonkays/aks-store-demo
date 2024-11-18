@@ -23,7 +23,7 @@ aiService:
   azureOpenAiApiVersion: "2024-02-15-preview"
   image:
     repository: "ghcr.io/azure-samples/aks-store-demo/{{ tpl .Values.branch . }}/ai-service"
-    tag: "a47ede0"
+    tag: "aa5eec9"
 orderService:
   queueHost: "rabbitmq"
   queuePort: "5672"
