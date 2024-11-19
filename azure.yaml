@@ -3,6 +3,12 @@
 name: aks-store-demo
 metadata:
   template: aks-store-demo@1.1.0
+platform:
+    type: devcenter
+    config:
+        catalog: eCommStoreInfra 
+        name: Contoso-AI
+        project: eCommStore
 hooks:
   preprovision:
     posix:
@@ -55,13 +61,13 @@ services:
   demo:
     host: aks
     k8s:
-      namespace: pets
+      namespace: bug123
       service:
-        name: store-admin
+        name: store-front
       helm:
         repositories:
           - name: aks-store-demo
-            url: https://azure-samples.github.io/aks-store-demo
+            url: "https://github.com/jacksonkays/aks-store-demo"
         releases:
           - name: demo
             chart: aks-store-demo/aks-store-demo-chart
