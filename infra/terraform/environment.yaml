@@ -1,7 +1,7 @@
 name: eCommStoreApp
 summary: AKS/ADE/Terraform demo environment - showing multitenancy capabilities
 description: Full environment for the eCommStore application, deployed onto a shared AKS cluster
-runner: fidalgo.azurecr.io/test-image:latest
+runner: fidalgo.azurecr.io/deployment-environments/aks-terraform:latest
 templatePath: main.tf
 parameters:
   - id: "name"
